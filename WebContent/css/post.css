@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.post{
+	background:linear-gradient(#00fff0, #b4f1f1, #a6fff2);
+	position:absolute;
+	width:800px;
+	left:30%;
+}
+
+.card{
+	background:linear-gradient(45deg, #fdfdfd, #ffcdab, #dee1ec);
+	margin:20px 20px;
+}
+.card-text{
+	text-align:center;
+}
+
+#item{
+	color:red;
+	font-size:60px;
+	font-weight: 800;
+}
+.card-text p{
+	font-size:30px;	
+}
+
+#comment{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	opacity:0.3;
+	}

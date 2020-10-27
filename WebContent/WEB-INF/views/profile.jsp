@@ -74,7 +74,11 @@ prefix="c" %>
         </ul>
       </div>
     </nav>
-
+ <section>
+      <div class="container">
+        <h1>"Many of life's failures are people who did not realize how close they were to success when they gave up."</h1>
+      </div>
+    </section>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"

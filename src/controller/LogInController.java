@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.User;
 import dao.UserDao;
-import oracle.net.aso.l;
-import utility.ConnectionManager;
 
 /**
  * Servlet implementation class LogInController

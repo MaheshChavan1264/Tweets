@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <title>Tweets</title>
     <link type="text/css" rel="stylesheet" href="./css/style1.css" />
-
+    <link type="text/css" rel="stylesheet" href="./css/post.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -89,11 +91,25 @@ pageEncoding="UTF-8"%>
         </ul>
       </div>
     </nav>
-    <section class="posts">
-      <div class="post">
-        <h1>First Post</h1>
-        <p>Always share the thoughts or the coding knowledge to the peoples.</p>
-      </div>
-    </section>
+    <div class="post">
+	<c:forEach var="post" items="${posts}">
+    		<div class="card">
+            <div class="card-text">
+                <h1 id="item" ><c:out value="${post.getPostTitle()}" /></h1>
+                <p ><c:out value="${post.getPost()}" /></p>
+                <p>Posted on <b><c:out value="${post.getDate()}" /></b> </p>
+                <c:forEach var="comments" items="$comments">
+                	<p><c:out value="${comment.getComment()}" /></p>
+                </c:forEach>
+            </div>
+            <div class="card-buttons">
+                <button type="button" id="edit" value="edit">EDIT</button> <span></span><button id="delete" value="delete">DELETE</button>
+            </div>
+            <p>Comments</p>
+                <textarea name="comment" rows="5" id="comment"></textarea>
+			<button id="post" type="submit">Add Comments</button>        
+			</div>
+        </c:forEach>
+ 	</div>
   </body>
 </html>

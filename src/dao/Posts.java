@@ -3,10 +3,17 @@ package dao;
 import java.time.LocalDate;
 
 public class Posts {
+	private int id;
 	private String postTitle;
 	private String post;
 	private LocalDate date;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getPostTitle() {
 		return postTitle;
 	}

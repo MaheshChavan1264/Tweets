@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,11 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.User;
 import dao.UserDao;
-import oracle.net.aso.l;
 
-/**
- * Servlet implementation class SignUpController
- */
+
 @WebServlet("/signup")
 public class SignUpController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -49,7 +45,6 @@ public class SignUpController extends HttpServlet {
 		String email = request.getParameter("email");
 		String password  = request.getParameter("password");
 		String confirmPassword  = request.getParameter("confirmPassword");
-		String messageString; 
 		User user = new User();
 		user.setFname(fname);
 		user.setLname(lname);
@@ -65,15 +60,13 @@ public class SignUpController extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(result!=0) {
-			messageString ="Registration Successfull";
 			RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/welcome.jsp");
 			rd.forward(request, response);
 		}else {
-			messageString ="Registration Not Successfull";
 		}
 	}
 
 }
 
-//bro wait i will call you
+
 
